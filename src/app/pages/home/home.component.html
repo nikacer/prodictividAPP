@@ -1,0 +1,35 @@
+<ng-container
+  *ngIf="data && data[config.selected] && data[config.selected].results"
+>
+  <app-header [config]="config" (setConfig)="cambioMenu($event)"></app-header>
+  <div class="body">
+    <div class="search">
+      <nz-input-group [nzSuffix]="suffixIconSearch">
+        <input type="text" nz-input placeholder="filtrar y ordenar" #search />
+      </nz-input-group>
+      <ng-template #suffixIconSearch>
+        <i nz-icon nzType="search"></i>
+      </ng-template>
+    </div>
+    <div nz-row [nzGutter]="16">
+      <ng-container *ngFor="let card of filtrar()">
+        <app-card [config]="config" [data]="card"></app-card>
+      </ng-container>
+    </div>
+    <div class="paginador">
+      <nz-pagination
+        [nzPageIndex]="config.page[this.config.selected]"
+        [nzPageSize]="20"
+        [nzTotal]="data[config.selected].info.count"
+        [nzResponsive]="true"
+        (nzPageIndexChange)="traerDatos($event)"
+      ></nz-pagination>
+    </div>
+  </div>
+  <app-header
+    [config]="config"
+    (setConfig)="cambioMenu($event)"
+    movil="true"
+    class="mov"
+  ></app-header>
+</ng-container>

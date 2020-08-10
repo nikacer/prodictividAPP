@@ -1,0 +1,40 @@
+<div class="banner">
+  <img src="../../../assets/img/titulo.png" class="logo" />
+  <div class="imagenIZQ">
+    <img src="../../../assets/img/rickYmorty.png" alt="Rick y morty" />
+  </div>
+  <div class="imagenCentral">
+    <img src="../../../assets/img/portal.png" alt="portal" />
+  </div>
+  <div class="menu">
+    <ul>
+      <li
+        [ngClass]="{ active: config.selected === item.accion }"
+        *ngFor="let item of menu"
+        (click)="sendConfig(item.accion)"
+      >
+        <img [src]="item.url" />
+        <span>{{ item.name }}</span>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<div *ngIf="!movil" class="movil">
+  <img src="../../../assets/img/titulo.png" />
+</div>
+
+<div class="movil" *ngIf="movil">
+  <div class="menu">
+    <ul>
+      <li
+        [ngClass]="{ active: config.selected === item.accion }"
+        *ngFor="let item of menu"
+        (click)="sendConfig(item.accion)"
+      >
+        <img [src]="item.urlM" />
+        <span>{{ item.name }}</span>
+      </li>
+    </ul>
+  </div>
+</div>

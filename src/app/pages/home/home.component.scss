@@ -1,0 +1,39 @@
+@import "../../../assets/sass/base.scss";
+
+.body {
+  .search {
+    width: 300px;
+    margin: 30px 10px 30px 30px;
+    .ant-input-affix-wrapper {
+      border: 0px;
+      border-bottom: 1px solid $rosa-1;
+    }
+    input[type="text"] {
+      .focus-visible {
+        border: solid 1x $rosa-2 !important;
+      }
+    }
+  }
+  .paginador {
+    width: 100%;
+    text-align: center;
+    margin-top: 15px;
+    margin-bottom: 15px;
+  }
+}
+
+.desk {
+  display: block;
+}
+.mov {
+  display: none;
+}
+
+@media (max-width: 600px) {
+  .desk {
+    display: none;
+  }
+  .mov {
+    display: block;
+  }
+}

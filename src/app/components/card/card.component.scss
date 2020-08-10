@@ -1,0 +1,67 @@
+@import "../../../assets/sass/base.scss";
+
+.card {
+  width: 44vw;
+  margin: 15px 1vw 15px 1vw;
+  padding: 0px;
+
+  .image {
+    width: 50%;
+    float: left;
+    img {
+      width: 100%;
+    }
+  }
+
+  .content {
+    width: 50%;
+    float: right;
+    padding: 10px;
+    font-family: $font-1;
+    h1 {
+      text-align: left;
+      border-bottom: 3px solid $rosa-1;
+      font-size: 18px;
+    }
+
+    p {
+      margin-top: 15px;
+      span {
+        display: block;
+      }
+    }
+  }
+
+  &.modal {
+    width: 100%;
+    .content {
+      width: 90%;
+      float: none;
+    }
+    .image {
+      width: 90%;
+      float: none;
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  .card {
+    width: 100vw;
+    margin: 15px 0px 15px 0px;
+    &.modal {
+      width: 100%;
+      .content {
+        width: 90%;
+      }
+      .image {
+        width: 90%;
+      }
+    }
+  }
+
+  .ant-modal,
+  .ng-tns-c80-0 {
+    width: 300px !important;
+  }
+}
